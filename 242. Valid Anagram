@@ -1,0 +1,48 @@
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+ 
+
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+
+Output: true
+
+Example 2:
+
+Input: s = "rat", t = "car"
+
+Output: false
+
+==============
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        # l1 = []
+        # l2 = []
+        # for i in range(len(s)):
+        #     l1.append(s[i])
+        # for j in t:
+        #     if j in l1:
+        #         l1.remove(j) 
+        #     else:
+        #         l2.append(j)  
+        # if len(l1)==0 and len(l2)==0:
+        #     print("true")
+        #     return True
+         
+        # else:
+        #     print("false")
+        #     return False
+            
+        d1={}
+        d2={}
+        for i in s:
+            d1[i]=d1.get(i,0)+1
+        for i in t:
+            d2[i]=d2.get(i,0)+1
+        if d1==d2:
+            return True
+    
+        return False
+
+
